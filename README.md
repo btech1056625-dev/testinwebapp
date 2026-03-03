@@ -1,57 +1,143 @@
-# Developer Portfolio Web App
+# 🚀 Node.js Web Application
 
-A very first fully deployed frontend portfolio of mine on Amazon Web Services (AWS) Elastic Beanstalk. This mini-project serves as a modern, responsive personal developer profile page built with a Node.js Express backend.
+This is a Node.js web application deployed using AWS Elastic Beanstalk.
 
-## Features
+---
 
-- **Modern UI:** A sleek, dark-themed interface utilizing glassmorphism, CSS gradients, flexbox, and CSS grid.
-- **Personal Details:** Displays personal information including Name (Bhavya Varshney), Branch (CSE), and College (BIT Mesra).
-- **Social Connect:** Direct, stylish links to professional profiles:
-  - [GitHub](https://github.com/btech1056625-dev)
-  - [Codeforces](https://codeforces.com/profile/10566.25)
-  - [LeetCode](https://leetcode.com/btech1056625/)
-  - [HackerRank](https://www.hackerrank.com/btech10566_25)
-- **Production-Ready:** Configured natively for AWS Elastic Beanstalk (Amazon Linux 2023) using a custom `Procfile` and `0.0.0.0` port bindings to avoid IPv6 issues under Nginx.
+## 📌 Project Overview
 
-## Tech Stack
+This project is a backend web application built with Node.js. It is configured for deployment on a cloud environment and follows best practices for dependency management and version control.
 
-- **Backend:** Node.js, Express.js
-- **Frontend:** HTML5, pure CSS3 (no external styling frameworks required)
-- **Deployment:** AWS Elastic Beanstalk
-- **Proxy Server:** Nginx
+---
 
-## Local Development
+## 🛠 Tech Stack
 
-To run this application on your local machine:
+* Node.js
+* npm
+* Git & GitHub
+* AWS Elastic Beanstalk
 
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/btech1056625-dev/testinwebapp.git
-   ```
-2. Navigate into the application directory:
-   ```bash
-   cd "testinwebapp/my-eb-node-app"
-   ```
-3. Install the dependencies:
-   ```bash
-   npm install
-   ```
-4. Start the server:
-   ```bash
-   npm start
-   ```
-5. Open your browser and navigate to `http://localhost:3000`
+---
 
-## Deployment to AWS Elastic Beanstalk
+## 📂 Project Structure
 
-This project is configured specifically to deploy seamlessly to AWS Elastic Beanstalk.
+```
+project-root/
+│
+├── node_modules/        # Ignored (not pushed to GitHub)
+├── package.json         # Project metadata & dependencies
+├── package-lock.json    # Locked dependency versions
+├── .gitignore           # Files ignored by Git
+├── Procfile             # Defines start command for deployment
+└── app.js / server.js   # Main application file
+```
 
-1. Navigate to the `my-eb-node-app` folder.
-2. Select the **contents** of the folder (do not zip the parent folder itself) - ensure you include `app.js`, `index.html`, `package.json`, `package-lock.json`, and `Procfile`.
-3. Compress these files into a `.zip` archive.
-4. Open the AWS Console and navigate to **Elastic Beanstalk**.
-5. Create a new environment using the **Node.js** platform.
-6. Choose "Upload your code" and select the `.zip` file you created.
-7. Click **Deploy**.
+---
 
-**Note:** The application uses `app.listen(port, "0.0.0.0")` to ensure the Nginx reverse proxy connects properly using IPv4. Ensure the `Procfile` is included in your ZIP so EB successfully executes the `npm start` command.
+## ⚙️ Installation (Local Setup)
+
+1. Clone the repository:
+
+```
+git clone <your-repo-url>
+cd <project-folder>
+```
+
+2. Install dependencies:
+
+```
+npm install
+```
+
+3. Start the application:
+
+```
+npm start
+```
+
+The app will run on:
+
+```
+http://localhost:3000
+```
+
+---
+
+## 🚀 Deployment
+
+This application is deployed using AWS Elastic Beanstalk.
+
+### Deployment Steps:
+
+1. Ensure `package.json` contains a start script:
+
+```
+"scripts": {
+  "start": "node app.js"
+}
+```
+
+2. Make sure `.gitignore` includes:
+
+```
+node_modules/
+.env
+```
+
+3. Commit only necessary files:
+
+```
+git add .
+git commit -m "Deployment ready"
+git push origin main
+```
+
+4. Upload app ZIP to Elastic Beanstalk or deploy using EB CLI.
+
+---
+
+## 🔐 Environment Variables
+
+Sensitive values like API keys and database credentials should NOT be pushed to GitHub.
+
+Use environment variables instead.
+
+Example:
+
+```
+NODE_ENV=production
+```
+
+---
+
+## 📦 Dependency Management
+
+* `node_modules/` is NOT pushed to GitHub.
+* Dependencies are installed on the server using:
+
+```
+npm install
+```
+
+* `package-lock.json` ensures consistent dependency versions.
+
+---
+
+## ✅ Best Practices Followed
+
+* node_modules ignored via `.gitignore`
+* package-lock.json committed
+* Environment variables secured
+* Proper Git workflow used
+
+---
+
+## 👨‍💻 Author
+
+Bhavya Varshney
+
+---
+
+## 📜 License
+
+This project is for learning and development purposes.
